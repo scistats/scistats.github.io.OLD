@@ -1,8 +1,11 @@
 /* Mathjax */
 .theorem {
+    font-family: Microsoft Yahei, Helvetica, Arial, sans-serif;
     display: block;
     margin: 1rem 3rem;
-    font-style: italic;
+    font-size:1.06rem;
+    font-weight:600;
+    font-style: normal;
     background: #E3F2FD;
     padding:1rem;
 }
@@ -13,19 +16,22 @@
 }
 
 .exercise {
+    font-family: Microsoft Yahei, Helvetica, Arial, sans-serif;
     display: block;
-    margin: 12px 0;
-    font-style: italic;
+    margin: 1rem 3rem;
+    font-size:1.06rem;
+    font-style: normal;
     background: #E3F2FD;
     padding:1rem;
 }
 .exercise:before {
-    content: "Exercise.";
+    content: "习题.";
     font-weight: bold;
     font-style: normal;
 }
 
 .lemma {
+    font-family: Microsoft Yahei, Helvetica, Arial, sans-serif;
     display: block;
     margin: 12px 0;
     font-style: italic;
@@ -36,6 +42,7 @@
     font-style: normal;
 }
 .proof {
+    font-family: Microsoft Yahei, Helvetica, Arial, sans-serif;
     display: block;
     margin: 1rem 3rem;
     font-style: normal;
@@ -50,7 +57,28 @@
     content: "\25FC";
     float:right;
 }
+
+.solution {
+    font-family: Microsoft Yahei, Helvetica, Arial, sans-serif;
+    display: block;
+    margin: 1rem 3rem;
+    font-size:1.06rem;
+    font-style: normal;
+    padding:1rem;
+}
+.solution:before {
+    content: "解答.";
+    font-weight: bold;
+    font-style: normal;
+}
+.solution:after {
+    content: "\25FC";
+    float:right;
+}
+
+
 .definition {
+    font-family: Microsoft Yahei, Helvetica, Arial, sans-serif;
     display: block;
     margin: 12px 0;
     font-style: normal;

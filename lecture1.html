@@ -151,9 +151,11 @@ MathJax.Hub.Config({
           
 <div class="container">
     <div class="row">
+        
+        
         <div class="large-6 columns">
             <div class="slide download">
-                <a href=" /Lectures/lecture1_intro_prob.pdf">Lecture Notes</a>
+                <a href=" /Lectures/lecture1_intro_prob.pdf">本课课件 1</a>
             </div>
         </div>
     </div>
@@ -161,43 +163,276 @@ MathJax.Hub.Config({
 
           
 
-<h3 style="text-align:center">Additional Notes</h3>
-<div class="theorem">
-For any sets $A_{1},...,A_{n},$%
-\[
-P\left(  \bigcup_{n=1}^{\infty}A_{n}\right)  \leqslant\sum_{n=1}^{\infty
-}P\left(  A_{n}\right)
-\]
-and%
-\[
-P\left(  \bigcap_{n=1}^{\infty}A_{n}\right)  \geqslant1-\sum_{n=1}^{\infty
-}P\left(  A_{n}^{c}\right)  .
-\]
+<h3 style="text-align:center">课后习题</h3>
+<div class="exercise">
+两台机器$A$和$B$
+生产产品,
+其次品率分别为$0.01$和$0.02$.
+已知一批产品中$A$和$B$
+生产的产品分别占$0.6$
+和$0.4.$
+现抽取一件产品发现是次品,
+该产品为机器$A$所生产的概率是多少?
 </div>
 
-<div class="proof">
-Let $B_{1}=A_{1}$, $B_{2}=A_{1}^{c}\cap A_{2}$, $B_{3}=A_{1}^{c}\cap A_{2}%
-^{c}\cap A_{3}$, ... Then $B_{n}$, $n=1,2,...$, are disjoint,%
-\[
-\sum_{n=1}^{N}B_{n}=\bigcup_{n=1}^{N}A_{n},\forall N\geqslant1.
-\]
-By probabiliy axiom%
-\[
-\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  B_{n}\right)  =\sum
-_{n=1}^{\infty}P\left(  B_{n}\right)  =P\left(  \bigcup_{n=1}^{\infty}%
-B_{n}\right)  ,
-\]
-therefore%
-\begin{align*}
-P\left(  \bigcup_{n=1}^{\infty}A_{n}\right)    & =P\left(  \bigcup
-_{n=1}^{\infty}B_{n}\right)  \\
-& =\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  B_{n}\right)  \\
-& =\lim_{N\rightarrow\infty}P\left(  \bigcup_{n=1}^{N}A_{n}\right)  \\
-& \leqslant\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  A_{n}\right)  .
+<div class="solution">
+令$A=\left\{  \text{产品由}A\text{生产}
+\right\}  ,$ $B=\left\{  \text{产品由}
+B\text{生产}\right\}  $,
+
+$C=\left\{  \text{产品是次品}\right\}  .$
+由题设$P\left(  A\right)  =0.6$, $P\left(  B\right)  =0.4,$
+
+$P\left(  C|A\right)  =0.01$, $P\left(  C|B\right)  =0.02.$
+利用Bayes公式\begin{align*}
+P\left(  A|C\right)   &  =\frac{P\left(  C|A\right)  P\left(  A\right)
+}{P\left(  C|A\right)  P\left(  A\right)  +P\left(  C|B\right)  P\left(
+B\right)  }\\
+&  =\frac{0.01\cdot0.6}{0.01\cdot0.6+0.02\cdot0.4}=\frac{3}{7}
 \end{align*}
 
 </div>
 
+<div class="exercise">
+$4$人同时射击一个目标,
+他们击中目标的概率分别是$0.5$
+, $0.3,$ $0.4$和$0.2,$ 试确定目标被击中的概率
+</div>
+
+<div class="solution">
+令$A_{i}=\left\{  \text{第}
+i\text{人射击目标}\right\}  $, $i=1,2,3,4$.
+所求的事件为$A_{1}\cup A_{2}\cup A_{3}\cup
+A_{4},$
+由并集的概率公式得到\begin{align*}
+& P\left(  A_{1}\cup A_{2}\cup A_{3}\cup A_{4}\right)  \\
+& =P\left(  A_{1}\right)  +P\left(  A_{2}\right)  +P\left(  A_{3}\right)
++P\left(  A_{4}\right)  -P\left(  A_{1}A_{2}\right)  \\
+& -P\left(  A_{1}A_{3}\right)  -P\left(  A_{1}A_{4}\right)  -P\left(
+A_{2}A_{3}\right)  -P\left(  A_{2}A_{4}\right)  -P\left(  A_{3}A_{4}\right)
+\\
+& +P\left(  A_{1}A_{2}A_{3}\right)  +P\left(  A_{1}A_{2}A_{4}\right)
++P\left(  A_{1}A_{3}A_{4}\right)  +P\left(  A_{2}A_{3}A_{4}\right)  \\
+& -P\left(  A_{1}A_{2}A_{3}A_{4}\right)  \\
+& =0.832
+\end{align*}
+由于每个人射击是独立的,
+因此上面所有交集的概率都等于各自概率的乘积.
+</div>
+
+<div class="exercise">
+一小时内$3$台机器$A$, $B$
+和$C$
+需要维修的概率为$0.9$,
+$0.8$和$0.85,$ 试确定一小时内（1）没有机器需要维修的概率（2）至少有一台机器不需要维修的概率（3）至少有两台机器需要维修的概率
+</div>
+
+<div class="solution">
+$3$台机器分别标记为$1,2,3$.
+令$M_{i}=\left\{  \text{机器}
+i\text{正常运行}\right\}  $, $i=1,2,3$.
+三台机器的运作相互独立,
+利用独立性的性质进行计算.
+由题设$P\left(  M_{1}\right)  =0.1$, $P\left(  M_{2}\right)
+=0.2$, $P\left(  M_{3}\right)  =0.15$.
+
+(1)没有机器需要维修的事件为$M_{1}
+M_{2}M_{3}$,
+\[
+P\left(  M_{1}M_{2}M_{3}\right)  =P\left(  M_{1}\right)  P\left(
+M_{2}\right)  P\left(  M_{3}\right)  =0.1\cdot0.2\cdot0.15=0.003
+\]
+
+
+（2）至少有一台机器不需要维修的事件概率为$P\left(
+M_{1}\cup M_{2}\cup M_{3}\right)  =0.388.$
+
+（3）至少有两台机器需要维修的事件为$M_{1}
+^{c}M_{2}^{c}M_{3},$ $M_{1}^{c}M_{2}M_{3}^{c},$ $M_{1}M_{2}^{c}M_{3}^{c}
+$和$M_{1}^{c}M_{2}^{c}M_{3}^{c}$的并集,
+它们是不相交的,
+概率是\begin{align*}
+& P\left(  M_{1}^{c}M_{2}^{c}M_{3}\right)  +P\left(  M_{1}^{c}M_{2}M_{3}
+^{c}\right)  +P\left(  M_{1}M_{2}^{c}M_{3}^{c}\right)  +P\left(  M_{1}
+^{c}M_{2}^{c}M_{3}^{c}\right)  \\
+& =P\left(  M_{1}^{c}\right)  P\left(  M_{2}^{c}\right)  P\left(
+M_{3}\right)  +P\left(  M_{1}^{c}\right)  P\left(  M_{2}\right)  P\left(
+M_{3}^{c}\right)  +\\
+& P\left(  M_{1}\right)  P\left(  M_{2}^{c}\right)  P\left(  M_{3}^{c}\right)
++P\left(  M_{1}^{c}\right)  P\left(  M_{2}^{c}\right)  P\left(  M_{3}
+^{c}\right)  \\
+& =0.059
+\end{align*}
+
+</div>
+
+<div class="exercise">
+投掷一个硬币直到正面连续出现两次,
+试写出样本空间.
+现假设硬币是均匀的,
+那么投掷次数为$4$
+次的概率是多少?
+</div>
+
+<div class="solution">
+样本空间为$\left\{
+HH,THH,TTHH,HTHH,......\right\}  .$
+投掷次数为$4$
+次意味着投掷序列应为\[
+\left\{  TTHH,HTHH\right\}
+\]
+因此,
+如果硬币是均匀的,
+那么\begin{align*}
+P\left(  \left\{  TTHH,HTHH\right\}  \right)   &  =P\left(  TTHH\right)
++P\left(  HTHH\right) \\
+&  =\left(  \frac{1}{2}\right)  ^{4}+\left(  \frac{1}{2}\right)  ^{4}=\frac
+{1}{8}
+\end{align*}
+
+</div>
+
+<div class="exercise">
+试证明对任意事件集$\left\{
+A_{n}\right\}  _{n=1}^{N}$,
+下面的不等式成立
+\[
+P\left(  \bigcup_{n=1}^{N}A_{n}\right)  \leqslant\sum_{n=1}^{N}P\left(
+A_{n}\right)
+\]
+
+</div>
+
+<div class="solution">
+令 $B_{1}=A_{1}$, $B_{2}=A_{1}^{c}\cap A_{2}$, $B_{3}=A_{1}^{c}\cap
+A_{2}^{c}\cap A_{3}$, ... 那么 $B_{k}$, $k=1,2,...N$,
+互不相交, $B_{k}\subset A_{k}$, $k=1,2,...$,
+并且\[
+\bigcup_{k=1}^{m}B_{k}=\bigcup_{k=1}^{m}A_{k},\forall1\leqslant m\leqslant N.
+\]
+根据概率的性质\begin{align*}
+P\left(  \bigcup_{k=1}^{N}A_{k}\right)   &  =P\left(  \bigcup_{k=1}^{N}
+B_{k}\right)  \\
+&  =\sum_{k=1}^{N}P\left(  B_{k}\right)  \\
+&  \leqslant\sum_{k=1}^{N}P\left(  A_{k}\right)  .
+\end{align*}
+
+</div>
+
+<div class="exercise">
+假设一年有$365$天,
+婴儿出生的日期在这$365$
+天当中是等可能的,
+任意选中$n\leqslant365$个婴儿,
+确定这$n$
+个婴儿的生日互不相同的概率.
+</div>
+
+<div class="solution">
+概率\[
+p=\frac{365}{365}\cdot\frac{364}{365}...\frac{365-n+1}{365}
+\]
+
+</div>
+
+<div class="exercise">
+假设一年有$365$天,
+婴儿出生的日期在这$365$
+天当中是等可能的,
+任意选中$n\leqslant365$个婴儿,
+试确定$n$
+至少应该是多大，才能使得这$n$
+个婴儿的生日互不相同的概率不超过$\frac
+{1}{2}$?
+</div>
+
+<div class="solution">
+由上题\[
+\ln p=\ln\left(  1-\frac{1}{365}\right)  +\ln\left(  1-\frac{2}{365}\right)
++...+\ln\left(  1-\frac{n-1}{365}\right)
+\]
+由Taylor公式$\ln\left(  1-x\right)  \approx-x.$
+\[
+\ln p\approx-\frac{\sum_{i=1}^{n-1}i}{365}=-\frac{n\left(  n-1\right)  }{730}.
+\]
+由题意求解方程\[
+-\frac{n\left(  n-1\right)  }{730}=-\ln2\approx-0.693
+\]
+得到$n$大约应为$23$.
+</div>
+
+<div class="exercise">
+$n$
+个人将他们的帽子放在桌上.
+打乱帽子顺序，然后每个人从中任意取走一顶帽子.
+没有一个人拿到自己帽子的概率有多大?（提示:
+考虑在给定第一个人是否拿到自己帽子的条件下,
+余下的人都没有拿到自己帽子的条件概率,
+并仿照撞击时间问题建立递推关系）
+</div>
+
+<div class="solution">
+$E=\left\{
+\text{没有人拿到自己的帽子}
+\right\}  $. 用$P_{n}$
+表示我们的概率,
+下角标$n$
+用来强调我们所考虑的事件里面涉及的人数.
+那么我们要求的是$P_{n}\left(
+E\right)  $. 令
+
+$A_{1}=\left\{  \text{第}
+1\text{个人拿到自己的帽子}
+\right\}  .$ 由全概率公式\[
+P_{n}\left(  E\right)  =P_{n}\left(  E|A_{1}\right)  P_{n}\left(
+A_{1}\right)  +P_{n}\left(  E|A_{1}^{c}\right)  P_{n}\left(  A_{1}^{c}\right)
+.
+\]
+如果第一个人拿到自己的帽子,
+那么事件$E$
+发生概率为零：$P_{n}\left(
+E|A_{1}\right)  =0.$ 因此\[
+P_{n}\left(  E\right)  =P_{n}\left(  E|A_{1}^{c}\right)  \frac{n-1}{n}.
+\]
+假设第$1$
+个人拿走了第$k\geqslant2$
+个人的帽子,
+那么在余下的$n-1$个人中,
+除了第$k$
+个人以外，所有人的帽子都还在,
+而第$k$个人只能认为第$1$
+个人的帽子是自己的.
+令$B_{k}=\left\{  \text{第}
+k\text{个人拿到第}
+1\text{个人的帽子}\right\}  $.
+\begin{align*}
+P_{n}\left(  E|A_{1}^{c}\right)   &  =P_{n}\left(  EA_{k}|A_{1}^{c}\right)
++P_{n}\left(  EA_{k}^{c}|A_{1}^{c}\right)  \\
+&  =\frac{1}{n-1}P_{n-2}\left(  E\right)  +P_{n-1}\left(  E\right)  .
+\end{align*}
+将上面的方程写在一起就得到\begin{align*}
+P_{n}\left(  E\right)   &  =\left(  \frac{1}{n-1}P_{n-2}\left(  E\right)
++P_{n-1}\left(  E\right)  \right)  \\
+&  =\frac{1}{n}P_{n-2}\left(  E\right)  +\frac{n-1}{n}P_{n-1}\left(  E\right)
+\end{align*}
+重写该方程得到\[
+P_{n}\left(  E\right)  -P_{n-1}\left(  E\right)  =\frac{1}{n}\left(
+P_{n-2}\left(  E\right)  -P_{n-1}\left(  E\right)  \right)
+\]
+注意该方程的边界条件$P_{1}
+\left(  E\right)  =0,$ $P_{2}\left(  E\right)  =1/2.$
+求解该差分方程得到\[
+P_{n}\left(  E\right)  =\frac{1}{2!}-\frac{1}{3!}+\cdot\cdot\cdot
++\frac{\left(  -1\right)  ^{n}}{n!},n\geqslant2.
+\]
+
+</div>
+
+
+<h3 style="text-align:center">参考材料</h3>
+<figure>
+  <img src="" alt="" width="100%">
+</figure>
 
 
         </div>
