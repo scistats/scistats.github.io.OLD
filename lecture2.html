@@ -38,7 +38,7 @@
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-  "HTML-CSS": {preferredFont: "STIX"},
+  "HTML-CSS": {preferredFont: "STIX",matchFontHeight: true},
   jax: ["input/TeX","output/SVG"],
   showMathMenu: false
 });
@@ -99,7 +99,7 @@ var _hmt = _hmt || [];
 </i>
 </div>
 <div style="display:inline-block">
-<a href="lecture1.html">Events and Probability</a>
+<a href="lecture1.html">1. 事件与概率</a>
 </div>
 </li>
 
@@ -110,29 +110,7 @@ var _hmt = _hmt || [];
 </i>
 </div>
 <div style="display:inline-block">
-<a href="#">Discrete random variable</a>
-</div>
-</li>
-
-    
-<li class="offscreen-item">
-<div style="display:inline-block">
-<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
-</i>
-</div>
-<div style="display:inline-block">
-<a href="#">Continuous random variable</a>
-</div>
-</li>
-
-    
-<li class="offscreen-item">
-<div style="display:inline-block">
-<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
-</i>
-</div>
-<div style="display:inline-block">
-<a href="#">Expectation and variance</a>
+<a href="lecture2.html">2. 随机变量及其分布</a>
 </div>
 </li>
 
@@ -165,7 +143,7 @@ var _hmt = _hmt || [];
         
         <div class="large-6 columns">
             <div class="slide download">
-                <a href=" /Lectures/lecture1_intro_prob.pdf">本课课件 1</a>
+                <a href=" /Lectures/lecture2_rv1.pdf">本课课件 1</a>
             </div>
         </div>
     </div>
@@ -174,40 +152,100 @@ var _hmt = _hmt || [];
           
 
 <h3 style="text-align:center">课后习题</h3>
-<div class="theorem">
-For any sets $A_{1},...,A_{n},$%
-\[
-P\left(  \bigcup_{n=1}^{\infty}A_{n}\right)  \leqslant\sum_{n=1}^{\infty
-}P\left(  A_{n}\right)
+<div class="exercise">
+一个袋子中个$5$红球,
+$3$个橙球, $2$蓝球.
+任意取出$2$个球.
+试写出样本空间. 用$X$
+表示被选中的球中橙色球的数目,
+确定$P\left(  X=0\right)  $?
+</div>
+
+<div class="exercise">
+假设随机变量$X$
+的分布函数为\[
+F\left(  x\right)  =\left\{
+\begin{array}
+[c]{cc}
+0, & x<0\\
+\frac{1}{2}, & 0\leqslant x<1\\
+1, & 1\leqslant x<\infty
+\end{array}
+\right.
 \]
-and%
+试写出随机变量的密度函数
+</div>
+
+<div class="exercise">
+投掷一个硬币直到出现$r$
+个正面,
+假设在一次投掷中硬币正面出现概率为$p$
+. 令$X$
+表示每次实验的投掷总次数.
+证明$X$具有密度函数
 \[
-P\left(  \bigcap_{n=1}^{\infty}A_{n}\right)  \geqslant1-\sum_{n=1}^{\infty
-}P\left(  A_{n}^{c}\right)  .
+P\left(  X=n\right)  =C_{n-1}^{r-1}p^{r}\left(  1-p\right)  ^{n-r},n\geqslant
+r.
 \]
 </div>
 
-<div class="proof">
-Let $B_{1}=A_{1}$, $B_{2}=A_{1}^{c}\cap A_{2}$, $B_{3}=A_{1}^{c}\cap A_{2}%
-^{c}\cap A_{3}$, ... Then $B_{n}$, $n=1,2,...$, are disjoint,%
-\[
-\sum_{n=1}^{N}B_{n}=\bigcup_{n=1}^{N}A_{n},\forall N\geqslant1.
-\]
-By probabiliy axiom%
-\[
-\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  B_{n}\right)  =\sum
-_{n=1}^{\infty}P\left(  B_{n}\right)  =P\left(  \bigcup_{n=1}^{\infty}%
-B_{n}\right)  ,
-\]
-therefore%
-\begin{align*}
-P\left(  \bigcup_{n=1}^{\infty}A_{n}\right)    & =P\left(  \bigcup
-_{n=1}^{\infty}B_{n}\right)  \\
-& =\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  B_{n}\right)  \\
-& =\lim_{N\rightarrow\infty}P\left(  \bigcup_{n=1}^{N}A_{n}\right)  \\
-& \leqslant\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  A_{n}\right)  .
-\end{align*}
+<div class="exercise">
+独立地投掷一个均匀硬币$n$
+次$,$ 其中由甲投掷$k$次,
+由乙投掷$n-k$次$.$
+证明甲和乙得到相同正面数目的概率等于两人得到的正面总数目正好为$k$
+的概率.
+</div>
 
+<div class="exercise">
+随机变量$X$
+的分布函数是$F\left(  x\right)  $.
+确定$Y=aX+b$
+的分布函数.
+</div>
+
+<div class="exercise">
+随机变量$X$和$Y$
+的分布函数分别是$F\left(
+x\right)  ,$ $G\left(  x\right)  $. $\lambda\in\left(  0,1\right)  .$
+下列哪些是分布函数, 试说明理由.
+
+(1) $\lambda F\left(  x\right)  +\left(  1-\lambda\right)  G\left(  x\right)
+;$
+
+(2) $F\left(  x\right)  ^{\lambda}G\left(  x\right)  ^{1-\lambda};$
+
+(3) $F\left(  x\right)  ^{\lambda}$.
+</div>
+
+<div class="exercise">
+已知随机变量$X$
+的分布函数是\[
+P\left(  X\leqslant x\right)  =\left\{
+\begin{array}
+[c]{cc}%
+0, & x\leqslant 0\\
+x, & 0< x\leqslant 1\\
+1, & 1< x
+\end{array}
+\right.  .
+\]
+假设$F\left(  x\right)  $
+是连续的严格递增分布函数.
+试说明$Y=F^{-1}\left(  X\right)  $
+是一个以$F\left(  x\right)  $
+为分布函数的随机变量.
+</div>
+
+<div class="exercise">
+随机变量$X$
+的分位函数被定义为\[
+F^{-1}\left(  p\right)  =\inf\left\{  x:F\left(  x\right)  \geqslant
+p\right\}  ,\forall p\in\left(  0,1\right)  .
+\]
+其中$F\left(  x\right)  $是分布函数.
+试证明$F^{-1}\left(  p\right)  $是关于$p$
+的左连续函数.
 </div>
 
 

@@ -137,19 +137,62 @@ var _hmt = _hmt || [];
       <div class="row">
         <div class="col-md-12">
           
-          
-          
-  <div class="section" id="id1">
-<h1>参考图书<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<ol class="arabic simple">
-<li>概率统计教程. 邢家省, 马健. 北京: 机械工业出版社, 2015年.</li>
-<li>概率论与数理统计(第4版). 盛骤, 谢式千, 潘承毅. 高等教育出版社 2010.</li>
-<li>概率统计与随机过程. 张福渊、郭绍建、萧亮壮、付丽华编，北京航空航天大学出版社；2012年，第2版.</li>
-<li>概率论与数理统计教程. 茆诗松，程依明，濮哓龙. 高等教育出版社, 2004年.</li>
-<li>概率论与数理统计. 宗序平，等.机械工业出版社, 2007年.</li>
-<li>概率统计与随机过程习题解集.邢家省.北京: 机械工业出版社, 2010年.</li>
-</ol>
+<div class="container">
+    <div class="row">
+        
+        
+        <div class="large-6 columns">
+            <div class="slide download">
+                <a href=" /Lectures/lecture1_intro_prob.pdf">本课课件 1</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+          
+
+<h3 style="text-align:center">课后习题</h3>
+<div class="theorem">
+For any sets $A_{1},...,A_{n},$%
+\[
+P\left(  \bigcup_{n=1}^{\infty}A_{n}\right)  \leqslant\sum_{n=1}^{\infty
+}P\left(  A_{n}\right)
+\]
+and%
+\[
+P\left(  \bigcap_{n=1}^{\infty}A_{n}\right)  \geqslant1-\sum_{n=1}^{\infty
+}P\left(  A_{n}^{c}\right)  .
+\]
+</div>
+
+<div class="proof">
+Let $B_{1}=A_{1}$, $B_{2}=A_{1}^{c}\cap A_{2}$, $B_{3}=A_{1}^{c}\cap A_{2}%
+^{c}\cap A_{3}$, ... Then $B_{n}$, $n=1,2,...$, are disjoint,%
+\[
+\sum_{n=1}^{N}B_{n}=\bigcup_{n=1}^{N}A_{n},\forall N\geqslant1.
+\]
+By probabiliy axiom%
+\[
+\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  B_{n}\right)  =\sum
+_{n=1}^{\infty}P\left(  B_{n}\right)  =P\left(  \bigcup_{n=1}^{\infty}%
+B_{n}\right)  ,
+\]
+therefore%
+\begin{align*}
+P\left(  \bigcup_{n=1}^{\infty}A_{n}\right)    & =P\left(  \bigcup
+_{n=1}^{\infty}B_{n}\right)  \\
+& =\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  B_{n}\right)  \\
+& =\lim_{N\rightarrow\infty}P\left(  \bigcup_{n=1}^{N}A_{n}\right)  \\
+& \leqslant\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  A_{n}\right)  .
+\end{align*}
+
+</div>
+
+
+<h3 style="text-align:center">参考材料</h3>
+<figure>
+  <img src="" alt="" width="100%">
+</figure>
 
 
         </div>
