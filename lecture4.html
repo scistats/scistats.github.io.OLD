@@ -154,7 +154,7 @@ var _hmt = _hmt || [];
         
         <div class="large-6 columns">
             <div class="slide download">
-                <a href=" /Lectures/lecture3_rv2.pdf">本课课件 1</a>
+                <a href=" /Lectures/lecture1_intro_prob.pdf">本课课件 1</a>
             </div>
         </div>
     </div>
@@ -163,88 +163,40 @@ var _hmt = _hmt || [];
           
 
 <h3 style="text-align:center">课后习题</h3>
-<div class="exercise">
-随机变量$X$
-的密度函数为$f\left(  x\right)  =\frac
-{c}{1+x^{2}}.$ (1) 确定常数$c$ (2)
-确定$X^{2}\in\left[  \frac{1}{3},1\right]  $
-的概率?
-</div>
-
-<div class="exercise">
-连续型随机变量$X,Y$
-具有联合密度函数\[
-f\left(  x,y\right)  =\left\{
-\begin{array}
-[c]{cc}
-cxy, & 0< x < 4, 1< y<5 \\
-0, & \text{其他}
-\end{array}
-\right.
+<div class="theorem">
+For any sets $A_{1},...,A_{n},$%
+\[
+P\left(  \bigcup_{n=1}^{\infty}A_{n}\right)  \leqslant\sum_{n=1}^{\infty
+}P\left(  A_{n}\right)
 \]
-
-
-(1) 确定常数$c,$
-并求出概率$P\left(  1< X<2,2< Y<3\right)  $
-
-(2) 确定关于$X$和$Y$的边际分布函数
-
-(3)确定$X$和$Y$的联合分布函数
-
-(4)确定概率$P\left(  X+Y<3\right)  $.
-</div>
-
-<div class="exercise">
-随机变量$X$与$Y$
-机变相互独立,
-其密度函数分别为\[
-f_{1}\left(  x\right)  =\left\{
-\begin{array}
-[c]{cc}
-2e^{-2x}, & x\geqslant0\\
-0, & x<0
-\end{array}
-\right.  ,f_{2}\left(  x\right)  =\left\{
-\begin{array}
-[c]{cc}
-3e^{-3y}, & y\geqslant0\\
-0, & y<0
-\end{array}
-\right.
+and%
+\[
+P\left(  \bigcap_{n=1}^{\infty}A_{n}\right)  \geqslant1-\sum_{n=1}^{\infty
+}P\left(  A_{n}^{c}\right)  .
 \]
-确定$U=X+Y$的密度函数.
 </div>
 
-<div class="exercise">
-两个人约好在某日下午$2$
-点至$3$点之间见面,
-并同意让对方等待的时间不超过$0.25$
-小时.
-确定两人能碰面的概率.
-</div>
-
-<div class="exercise">
-随机变量$X$与$Y$
-机变相互独立,
-它们有相同的分布函数$F\left(
-x,y\right)  $以及密度函数$f\left(
-x,y\right)  $, 试确定$U=\max\left(  X,Y\right)
-$和$V=\min\left(  X,Y\right)  $
-的分布函数与密度函数.
-</div>
-
-<div class="exercise">
-（随机变量的线性变换）假设随机变量$\mathbf{X}
-=\left(  X_{1},...,X_{n}\right)  $
-的联合密度函数为$f\left(
-x_{1},...,x_{n}\right)  .$ 令随机变量$\mathbf{Y}
-=\left(  Y_{1},...,Y_{n}\right)  =\mathbf{AX}$, 其中$\mathbf{A}
-$是非奇异的$n\times n$矩阵.
-试证明$\mathbf{Y}$
-的密度函数为\[
-g\left(  \mathbf{y}\right)  =\frac{f\left(  \mathbf{A}^{-1}\mathbf{y}\right)
-}{\left\vert \det\mathbf{A}\right\vert },\forall\mathbf{y}\in\mathbb{R}^{n}
+<div class="proof">
+Let $B_{1}=A_{1}$, $B_{2}=A_{1}^{c}\cap A_{2}$, $B_{3}=A_{1}^{c}\cap A_{2}%
+^{c}\cap A_{3}$, ... Then $B_{n}$, $n=1,2,...$, are disjoint,%
+\[
+\sum_{n=1}^{N}B_{n}=\bigcup_{n=1}^{N}A_{n},\forall N\geqslant1.
 \]
+By probabiliy axiom%
+\[
+\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  B_{n}\right)  =\sum
+_{n=1}^{\infty}P\left(  B_{n}\right)  =P\left(  \bigcup_{n=1}^{\infty}%
+B_{n}\right)  ,
+\]
+therefore%
+\begin{align*}
+P\left(  \bigcup_{n=1}^{\infty}A_{n}\right)    & =P\left(  \bigcup
+_{n=1}^{\infty}B_{n}\right)  \\
+& =\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  B_{n}\right)  \\
+& =\lim_{N\rightarrow\infty}P\left(  \bigcup_{n=1}^{N}A_{n}\right)  \\
+& \leqslant\lim_{N\rightarrow\infty}\sum_{n=1}^{N}P\left(  A_{n}\right)  .
+\end{align*}
+
 </div>
 
 
