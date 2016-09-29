@@ -172,6 +172,17 @@ $3$个橙球, $2$蓝球.
 确定$P\left(  X=0\right)  $?
 </div>
 
+<div class="solution">
+$X=0$意味着$2$个球都是从$5$
+红球和 $2$蓝球中抽出,
+其抽取方法数为$C_{7}^{2}$.
+因此\[
+P\left(  X=0\right)  =\frac{C_{7}^{2}}{C_{10}^{2}}=\frac{7!}{2!5!}\frac
+{2!8!}{10!}=\frac{7\cdot6}{10\cdot9}=\frac{14}{30}
+\]
+
+</div>
+
 <div class="exercise">
 假设随机变量$X$
 的分布函数为\[
@@ -187,6 +198,31 @@ F\left(  x\right)  =\left\{
 试写出随机变量的密度函数
 </div>
 
+<div class="solution">
+该函数为分段连续函数,
+利用分布函数的性质,
+在其间断点处\[
+P\left(  X=0\right)  =F\left(  0\right)  -F\left(  0-\right)  =\frac{1}
+{2}-0=\frac{1}{2}
+\]
+\[
+P\left(  X=1\right)  =F\left(  1\right)  -F\left(  1-\right)  =1-\frac{1}
+{2}=\frac{1}{2}
+\]
+在其各个可导区间上,
+该分布函数导数为$0$.
+由分布函数与密度函数的关系得到密度函数如下\[
+f\left(  x\right)  =\left\{
+\begin{array}
+[c]{cc}
+\frac{1}{2}, & x=0,1\\
+0, & \text{其他}
+\end{array}
+\right.
+\]
+
+</div>
+
 <div class="exercise">
 投掷一个硬币直到出现$r$
 个正面,
@@ -200,6 +236,23 @@ r.
 \]
 </div>
 
+<div class="solution">
+$X=n$表明在这$n$
+次投掷中最后一次是正面,
+而前面的$n-1$
+次中必须有$r-1$个正面.
+最后一次投掷是正面,
+概率为$p.$ 前$n-1$次中有$r-1$
+个正面则服从参数是$n-1$
+和$p$的二项分布$.$
+由独立性,
+\[
+P\left(  X=n\right)  =C_{n-1}^{r-1}p^{r-1}\left(  1-p\right)  ^{n-r}\cdot
+p,n\geqslant r.
+\]
+
+</div>
+
 <div class="exercise">
 独立地投掷一个均匀硬币$n$
 次$,$ 其中由甲投掷$k$次,
@@ -208,11 +261,73 @@ r.
 的概率.
 </div>
 
+<div class="solution">
+令$X,Y$
+分别为甲和乙投得正面的次数.
+由题意, $X$服从参数为$k$
+和$\frac{1}{2}$的二项分布, $Y$
+服从参数为$n-k$和$\frac{1}{2}
+$的二项分布.
+由全概率公式以及独立性\begin{align*}
+P\left(  X=Y\right)   &  =\sum_{s}P\left(  Y=s|X=s\right)  P\left(  X=s\right)
+\\
+&  =\sum_{s}P\left(  Y=s\right)  P\left(  X=s\right) \\
+&  =\sum_{s}C_{n-k}^{s}\left(  \frac{1}{2}\right)  ^{n-k}\cdot C_{k}
+^{s}\left(  \frac{1}{2}\right)  ^{k}\\
+&  =\sum_{s}C_{n-k}^{s}\cdot C_{k}^{k-s}\left(  \frac{1}{2}\right)  ^{n}\\
+&  =C_{n}^{k}\left(  \frac{1}{2}\right)  ^{n}
+\end{align*}
+最后一个等号是由于从$n$
+个对象中取出$k$
+个的方法总数等于,
+先从前$n-k$个中取出$s$个,
+再从余下的$k$
+个中取出$k-s$个,
+然后对所有可能的$s$
+值求和所得到的总数.
+$C_{n}^{k}\left(  \frac{1}{2}\right)  ^{n}$
+正是甲和乙一共抽出$k$个正面的概率.
+
+本题也可以用如下方法证明.
+首先注意$X$服从参数为$k$
+和$\frac{1}{2}$的二项分布,
+因此$P\left(  X=s\right)  =P\left(  X=k-s\right)  $, $\forall s.$
+由全概率公式以及独立性\begin{align*}
+P\left(  X=Y\right)   &  =\sum_{s}P\left(  Y=s|X=s\right)  P\left(  X=s\right)
+\\
+&  =\sum_{s}P\left(  Y=s\right)  P\left(  X=s\right) \\
+&  =\sum_{s}P\left(  Y=s\right)  P\left(  X=k-s\right) \\
+&  =\sum_{s}P\left(  Y=s\right)  P\left(  X=k-s|Y=s\right) \\
+&  =P\left(  X+Y=k\right)
+\end{align*}
+
+</div>
+
 <div class="exercise">
 随机变量$X$
 的分布函数是$F\left(  x\right)  $.
 确定$Y=aX+b$
 的分布函数.
+</div>
+
+<div class="solution">
+根据定义, $Y$的分布函数\begin{align*}
+F_{Y}\left(  y\right)   &  =P\left(  Y\leqslant y\right)  \\
+&  =P\left(  aX+b\leqslant y\right)  \\
+&  =P\left(  aX\leqslant y-b\right)
+\end{align*}
+因此$a>0$时$F_{Y}\left(  y\right)  =F\left(  \frac{y-b}%
+{a}\right)  $; $a<0$时$F_{Y}\left(  y\right)  =1-\lim_{x\nearrow
+\frac{y-b}{a}}F\left(  x\right)  $; $a=0$时\[
+F_{Y}\left(  y\right)  =\left\{
+\begin{array}
+[c]{cc}%
+0, & y< b\\
+1, & y\geqslant b
+\end{array}
+\right.
+\]
+
 </div>
 
 <div class="exercise">
@@ -227,6 +342,12 @@ x\right)  ,$ $G\left(  x\right)  $. $\lambda\in\left(  0,1\right)  .$
 (2) $F\left(  x\right)  ^{\lambda}G\left(  x\right)  ^{1-\lambda};$
 
 (3) $F\left(  x\right)  ^{\lambda}$.
+
+</div>
+
+<div class="solution">
+容易验证上面的非负函数满足（1）右连续（2）在$-\infty
+,\infty$的极限分别为$0,1.$ 因此都是分布函数.
 </div>
 
 <div class="exercise">
@@ -234,9 +355,9 @@ x\right)  ,$ $G\left(  x\right)  $. $\lambda\in\left(  0,1\right)  .$
 的分布函数是\[
 P\left(  X\leqslant x\right)  =\left\{
 \begin{array}
-[c]{cc}%
-0, & x\leqslant 0\\
-x, & 0< x\leqslant 1\\
+[c]{cc}
+0, & x\leqslant0\\
+x, & 0< x\leqslant1\\
 1, & 1< x
 \end{array}
 \right.  .
@@ -248,15 +369,83 @@ x, & 0< x\leqslant 1\\
 为分布函数的随机变量.
 </div>
 
+<div class="solution">
+由于$F$严格单调,
+因此存在反函数$F^{-1}.$
+根据定义, $Y$的分布函数\begin{align*}
+F_{Y}\left(  y\right)   &  =P\left(  Y\leqslant y\right) \\
+&  =P\left(  F^{-1}\left(  X\right)  \leqslant y\right) \\
+&  =P\left(  X\leqslant F\left(  y\right)  \right) \\
+&  =F\left(  y\right)
+\end{align*}
+容易看出,
+题设中给出的分布函数$P\left(
+X\leqslant x\right)  $是$\left[  0,1\right]  $
+上的一致分布,
+该题说明,
+给定适当的分布函数,
+总是存在随机变量$Y$,
+它的分布函数$F_{Y}$
+正好是预先给定的分布函数$F.$
+(如果$F$不连续, 那么$F$
+只有广义的反函数, 参见课件)
+</div>
+
 <div class="exercise">
 随机变量$X$
 的分位函数被定义为\[
 F^{-1}\left(  p\right)  =\inf\left\{  x:F\left(  x\right)  \geqslant
 p\right\}  ,\forall p\in\left(  0,1\right)  .
 \]
-其中$F\left(  x\right)  $是分布函数.
-试证明$F^{-1}\left(  p\right)  $是关于$p$
+其中$F\left(  x\right)  $是$X$
+的分布函数. 试证明$F^{-1}
+\left(  p\right)  $是关于$p$
 的左连续函数.
+</div>
+
+<div class="solution">
+(1) 首先说明$F^{-1}$
+是单调不减少的. 在$F^{-1}
+$的定义域中任取$p_{1}\leqslant
+p_{2}.$ 令$C_{p}=\left\{  x:F\left(  x\right)  \geqslant p\right\}  .$
+由于$F\left(  x\right)  $
+是单调不减少的,
+集合$C_{p}$随着的$p$
+增加而减小, 因此\[
+F^{-1}\left(  p_{1}\right)  =\inf_{x}C_{p_{1}}\leqslant\inf_{x}C_{p_{2}
+}=F^{-1}\left(  p_{2}\right)
+\]
+
+
+（2）证明$F^{-1}\left(  p-\right)  =F^{-1}\left(
+p\right)  .$ 由于$F^{-1}$单调不减少,
+\[
+F^{-1}\left(  p-\right)  =\lim_{q\nearrow p}F^{-1}\left(  q\right)
+=\sup\left\{  F^{-1}\left(  q\right)  :q< p\right\}  .
+\]
+同时也有, 对任意$q< p$
+\begin{equation}
+F^{-1}\left(  q\right)  \leqslant F^{-1}\left(  p\right)
+\end{equation}
+由此\[
+F^{-1}\left(  q\right)  \leqslant F^{-1}\left(  p-\right)  \leqslant
+F^{-1}\left(  p\right)
+\]
+接下来说明$F^{-1}\left(  p-\right)
+< F^{-1}\left(  p\right)  $是不可能的.
+若不然, 假设$F^{-1}\left(  p-\right)
+< F^{-1}\left(  p\right)  $成立,
+那么根据$F^{-1}$的定义\[
+F\left(  F^{-1}\left(  p-\right)  \right)  < p
+\]
+于是
+\[
+F\left(  F^{-1}\left(  q\right)  \right)  \leqslant F\left(  F^{-1}\left(
+p-\right)  \right)  < p
+\]
+但我们有$q\leqslant F\left(  F^{-1}\left(  q\right)
+\right)  ,$ 因此$q\leqslant F\left(  F^{-1}\left(  p-\right)
+\right)  < p$, 这与$q$的任意性矛盾.
 </div>
 
 
