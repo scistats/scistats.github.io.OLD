@@ -202,6 +202,17 @@ var _hmt = _hmt || [];
 </i>
 </div>
 <div style="display:inline-block">
+<a href="lecture10.html">10. 样本分布的性质</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
 <a href="#">TBA</a>
 </div>
 </li>
@@ -246,9 +257,55 @@ var _hmt = _hmt || [];
 {2}\right)  .$
 </div>
 
+<div class="solution">
+由条件$X_{1}\sim\mathcal{N}\left(  0,1\right)  ,$ $X_{2}\sim\mathcal{N}\left(  0,1\right)  ,$
+且相互独立. 因此$X_{1}+X_{2}\sim\mathcal{N}\left(  0,1+1\right)  =\mathcal{N}\left(  0,2\right)  $,
+从而$\left(  X_{1}+X_{2}\right)  /\sqrt{2}\sim\mathcal{N}\left(
+0,1\right)  ,$\begin{align*}
+&  P\left(  -\sqrt{2}< X_{1}+X_{2}<2\sqrt{2}\right) \\
+&  =P\left(  -1<\frac{X_{1}+X_{2}}{\sqrt{2}}<2\right) \\
+&  =\Phi\left(  2\right)  -\Phi\left(  -1\right)  =\Phi\left(  2\right)
+-\left[  1-\Phi\left(  1\right)  \right]
+\end{align*}
+其中$\Phi\left(  x\right)  $是标准正太分布的分布函数.
+</div>
+
 <div class="exercise">
 假设$\left(  X_{1},X_{2}\right)  \sim\mathcal{N}\left(
 0;I\right)  $, 试求$X_{1}/X_{2}$的分布$.$
+</div>
+
+<div class="solution">
+先求出$X_{1}/X_{2}$与$X_{2}$的联合分布. 令$Y_{1}=X_{1}/X_{2}$,
+$Y_{2}=X_{2}$, 那么$X_{1}=Y_{1}Y_{2}$, $X_{2}=Y_{2}$,
+\[
+J=\left\vert
+\begin{array}
+[c]{cc}\frac{\partial x_{1}}{\partial y_{1}} & \frac{\partial x_{1}}{\partial y_{2}}\\
+\frac{\partial x_{2}}{\partial y_{1}} & \frac{\partial x_{2}}{\partial y_{2}}\end{array}
+\right\vert =\left\vert
+\begin{array}
+[c]{cc}y_{2} & y_{1}\\
+0 & 1
+\end{array}
+\right\vert =y_{2}\]
+由条件$\left(  X_{1},X_{2}\right)  $的联合密度为\[
+f\left(  x_{1},x_{2}\right)  =\frac{1}{2\pi}\exp\left[  -\frac{1}{2}\left(
+x_{1}^{2}+x_{1}^{2}\right)  \right]
+\]
+因此由密度变换公式,
+$\left(  Y_{1},Y_{2}\right)  $的联合密度为\begin{align*}
+g\left(  y_{1},y_{2}\right)   &  =f\left(  y_{1}y_{2},y_{2}\right)
+\cdot\left\vert y_{2}\right\vert \\
+&  =\frac{1}{2\pi}\left\vert y_{2}\right\vert \exp\left[  -\frac{1}{2}\left(
+y_{1}^{2}y_{2}^{2}+y_{2}^{2}\right)  \right]
+\end{align*}
+从而$X_{1}/X_{2}=Y_{1}$的密度即为关于$Y_{1}$的边际密度, $\forall y_{1}\in\mathbb{R}$\begin{align*}
+\int_{-\infty}^{\infty}g\left(  y_{1},y_{2}\right)  dy_{2}  &  =\frac{1}{\pi
+}\int_{0}^{\infty}y_{2}\exp\left[  -\frac{1}{2}\left(  y_{1}^{2}y_{2}^{2}+y_{2}^{2}\right)  \right]  dy_{2}\\
+&  =\frac{1}{\pi\left(  1+y_{1}^{2}\right)  }.
+\end{align*}
+
 </div>
 
 <div class="exercise">
@@ -256,8 +313,36 @@ var _hmt = _hmt || [];
 试求$1/X$的分布$.$
 </div>
 
+<div class="solution">
+$\Phi\left(  x\right)  $是标准正太分布的分布函数.
+$1/X$的分布为\begin{align*}
+F_{1/X}\left(  z\right)    & =P\left(  1/X\leqslant z\right)  \\
+& =P\left(  -\log X\leqslant\log z\right)  \\
+& =P\left(  \log X\geqslant-\log z\right)  \\
+& =P\left(  \frac{\log X-\mu}{\sigma}\geqslant\frac{-\log z-\mu}{\sigma
+}\right)  \\
+& =1-\Phi\left(  \frac{-\log z-\mu}{\sigma}\right)
+\end{align*}
+
+
+因此$1/X$的密度为\[
+\frac{1}{\sigma z}\cdot\Phi^{\prime}\left(  \frac{-\log z-\mu}{\sigma}\right)
+=\frac{1}{\sqrt{2\pi}\sigma}\frac{1}{z}\exp\left[  -\frac{1}{2}\left(
+\frac{-\log z-\mu}{\sigma}\right)  ^{2}\right]
+\]
+
+</div>
+
 <div class="exercise">
 假设$\log X\sim\mathcal{N}\left(  3;1.44\right)  $,试求$P\left(  X\leqslant6.05\right)  .$
+</div>
+
+<div class="solution">
+令$\Phi\left(  x\right)  $为标准正太分布的分布函数.\[
+P\left(  X\leqslant6.05\right)  =P\left(  \frac{\log X-3}{\sqrt{1.44}}\leqslant\frac{\log\left(  6.05\right)  -3}{\sqrt{1.44}}\right)  =\Phi\left(
+-1\right)
+\]
+
 </div>
 
 <div class="exercise">
@@ -267,20 +352,89 @@ _{1},\mu_{2};\sigma_{1}^{2},\sigma_{2}^{2},\rho\right)  $,
 _{1}=\sigma_{2}.$
 </div>
 
+<div class="solution">
+$\left(  X_{1}+X_{2},X_{1}-X_{2}\right)  $是由$\left(  X_{1},X_{2}\right)  $经过线性变换得到的,
+由正太分布的性质, $\left(
+X_{1}+X_{2},X_{1}-X_{2}\right)  $具有二元正态分布.
+因此其分量的独立性等价于不相关性,
+即当且仅当\[
+cov\left(  X_{1}+X_{2},X_{1}-X_{2}\right)  =0
+\]
+而\begin{align*}
+&  cov\left(  X_{1}+X_{2},X_{1}-X_{2}\right) \\
+&  =cov\left(  X_{1},X_{1}\right)  -cov\left(  X_{1},X_{2}\right)  +cov\left(
+X_{2},X_{1}\right)  -cov\left(  X_{2},X_{2}\right) \\
+&  =\sigma_{1}^{2}-\sigma_{2}^{2}\end{align*}
+因此独立当且仅当$\sigma
+_{1}=\sigma_{2}$.
+</div>
+
 <div class="exercise">
 假设$X_{k}\sim\mathcal{N}\left(  \mu_{k};\sigma_{k}^{2}\right)  ,$
 $k=1,2$, 相互独立. 试写出$X_{1}+X_{2}$与$X_{1}-X_{2}$的相关系数与联合分布.
 </div>
 
+<div class="solution">
+$\left(  X_{1}+X_{2},X_{1}-X_{2}\right)  $由$\left(  X_{1},X_{2}\right)
+$经过线性变换得到,
+因而具有二元正态分布,
+其分布由期望和协方差矩阵确定.
+由题设\[
+E\left(  X_{1}\pm X_{2}\right)  =\mu_{1}\pm\mu_{2},Var\left(  X_{1}\pm
+X_{2}\right)  =\sigma_{1}^{2}+\sigma_{2}^{2}\]
+相关系数为\[
+\rho=\frac{\sigma_{1}^{2}-\sigma_{2}^{2}}{\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}}=\frac{\sigma_{1}^{2}-\sigma_{2}^{2}}{\sigma_{1}^{2}+\sigma_{2}^{2}}\]
+因此$\left(  X_{1}+X_{2},X_{1}-X_{2}\right)  \sim\mathcal{N}\left(  \mu;C\right)  ,$ 其中\[
+\mu=\left(  \mu_{1},\mu_{2}\right)  ^{T},C=\left(
+\begin{array}
+[c]{cc}\sigma_{1}^{2} & \rho\sigma_{1}\sigma_{2}\\
+\rho\sigma_{1}\sigma_{2} & \sigma_{2}^{2}\end{array}
+\right)
+\]
+
+</div>
+
 <div class="exercise">
 对某一分布进行随机抽样,
 试问样本数目$n$应为多大才能使得样本平均$\bar
-{X}_{n}$与真实的分布期望值误差不超过$2$倍标准差的概率在$0.99$以上?
+{X}_{n}$与真实的分布期望值$\mu
+$误差不超过$2$倍标准差的概率在$0.99$以上?
+</div>
+
+<div class="solution">
+根据Chebyshev不等式,\[
+P\left(  \left\vert \bar{X}_{n}-\mu\right\vert \leqslant2\sigma\right)
+\geqslant1-\frac{Var\left(  \bar{X}_{n}\right)  }{4\sigma^{2}}=1-\frac{1}{4n}\]
+为使$P\left(  \left\vert \bar{X}_{n}-\mu\right\vert \leqslant
+2\sigma\right)  \geqslant0.99,$ 只要$1-\frac{1}{4n}\geqslant
+0.99,n\geqslant25.$
 </div>
 
 <div class="exercise">
 随机地从$\left\{  0,...,9\right\}  $中选取$16$个数字(可以重复),
 其平均值介于$4$和$6$之间的概率为多少?
+</div>
+
+<div class="solution">
+令$X_{i}$表示第$i$个随机选取的数字,
+那么$X_{1},...,X_{16}$独立同分布.
+且\[
+E\left(  X_{i}\right)  =\frac{1}{10}\left(  0+1+...+9\right)  =4.5
+\]\[
+E\left(  X_{i}^{2}\right)  =\frac{1}{10}\left(  0^{2}+1^{2}+...+9^{2}\right)
+=\left.  \frac{n\left(  n+1\right)  \left(  2n+1\right)  }{6}\right\vert
+_{n=9}=28.5
+\]
+$Var\left(  X\right)  =28.5-\left(  4.5\right)  ^{2}=8.25$.
+由中心极限定理,
+近似地$\bar{X}_{16}\sim\mathcal{N}\left(
+4.5;8.25/16\right)  $, 因此\begin{align*}
+P\left(  4\leqslant\bar{X}_{16}\leqslant6\right)   &  =P\left(  \frac
+{4-4.5}{\sqrt{8.25/16}}\leqslant\frac{\bar{X}_{16}-4.5}{\sqrt{8.25/16}}\leqslant\frac{6-4.5}{\sqrt{8.25/16}}\right) \\
+&  \approx P\left(  -0.70\leqslant\frac{\bar{X}_{16}-4.5}{\sqrt{8.25/16}}\leqslant2.089\right) \\
+&  \approx\Phi\left(  2.089\right)  -\Phi\left(  -0.70\right)
+\end{align*}
+其中$\Phi\left(  x\right)  $是标准正太分布的分布函数.
 </div>
 
 <div class="exercise">
@@ -289,8 +443,33 @@ $k=1,2$, 相互独立. 试写出$X_{1}+X_{2}$与$X_{1}-X_{2}$的相关系数与�
 其封面上有一个与对应卡片相同的图案.
 现将$n$张卡片随机地放入$n$个信封.
 每个信封只能放一张卡片.
-令$X_{n}$表示与信封相匹配的卡片的数目.
-试证明$\frac{X_{n}-E\left(  X_{n}\right)  }{n}\overset{P}{\longrightarrow}0$ ($n\rightarrow\infty$)$.$
+令$S_{n}$表示与信封相匹配的卡片的数目.
+试证明$\frac{S_{n}-E\left(  S_{n}\right)  }{n}\overset{P}{\longrightarrow}0$ ($n\rightarrow\infty$)$.$
+</div>
+
+<div class="solution">
+令$X_{i}=1$表示第$i$个卡片放入了与其对应的信封,
+$X_{i}=0$表示第$i$个卡片没有放入与其对应的信封.
+容易求得\[
+E\left(  X_{i}\right)  =\frac{1}{n},Var\left(  X_{i}\right)  =E\left(
+X_{i}^{2}\right)  -\frac{1}{n^{2}}=\frac{1}{n}-\frac{1}{n^{2}},
+\]\[
+cov\left(  X_{i},X_{j}\right)  =E\left(  X_{i}X_{j}\right)  -E\left(
+X_{i}\right)  E\left(  X_{j}\right)  =\frac{1}{n\left(  n-1\right)  }-\frac
+{1}{n^{2}}\]
+从而\begin{align*}
+Var\left(  S_{n}\right)   &  =\sum_{i=1}^{n}Var\left(  X_{i}\right)
++2\sum_{i< j}^{n}cov\left(  X_{i},X_{j}\right) \\
+&  =n\left(  \frac{1}{n}-\frac{1}{n^{2}}\right)  +n\left(  n-1\right)  \left(
+\frac{1}{n\left(  n-1\right)  }-\frac{1}{n^{2}}\right) \\
+&  =1
+\end{align*}
+因此根据Chebyshev不等式,
+$\forall\epsilon>0,$\[
+P\left(  \left\vert \frac{S_{n}-E\left(  S_{n}\right)  }{n}\right\vert
+\geqslant\epsilon\right)  \leqslant\frac{Var\left(  S_{n}\right)  }{\epsilon^{2}n^{2}}=\frac{1}{\epsilon^{2}n^{2}}\rightarrow0
+\]
+即$\frac{S_{n}-E\left(  S_{n}\right)  }{n}\overset{P}{\longrightarrow}0$.
 </div>
 
 
