@@ -213,6 +213,17 @@ var _hmt = _hmt || [];
 </i>
 </div>
 <div style="display:inline-block">
+<a href="lecture11.html">11. 参数估计</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
 <a href="#">TBA</a>
 </div>
 </li>
@@ -258,12 +269,43 @@ $在$x=c$处连续, $X_{n}\overset{P}{\longrightarrow}c$.
 c\right)  .$
 </div>
 
+<div class="solution">
+由连续性对$\forall\epsilon>0$,
+存在$\delta>0$, 只要$\left\vert X_{n}-c\right\vert
+<\delta$, 就有$\left\vert f\left(  X_{n}\right)  -f\left(
+c\right)  \right\vert <\epsilon$. 换言之\[
+\left\{  \left\vert f\left(  X_{n}\right)  -f\left(  c\right)  \right\vert
+\geqslant\epsilon\right\}  \subset\left\{  \left\vert X_{n}-c\right\vert
+\geqslant\delta\right\}
+\]
+因此, 当$n\rightarrow\infty$,\[
+P\left(  \left\vert f\left(  X_{n}\right)  -f\left(  c\right)  \right\vert
+\geqslant\epsilon\right)  \leqslant P\left(  \left\vert X_{n}-c\right\vert
+\geqslant\delta\right)  \rightarrow0
+\]
+即$f\left(  X_{n}\right)  \overset{P}{\longrightarrow}f\left(  c\right)
+.$
+</div>
+
 <div class="exercise">
 假设$X_{1},...,X_{n}$为随机样本,
 其总体方差为$\sigma^{2}.$ 证明\[
 \bar{S}^{2}=\frac{1}{n\left(  n-1\right)  }\sum_{i< j}\left(  X_{i}-X_{j}\right)  ^{2}\]
 是$\sigma^{2}$的无偏估计,
 即$E\left(  \bar{S}^{2}\right)  =\sigma^{2}.$
+</div>
+
+<div class="solution">
+注意到\begin{align*}
+\sum_{i< j}\left(  X_{i}-X_{j}\right)  ^{2}  & =\frac{1}{2}\sum_{i,j}\left(
+X_{i}-X_{j}\right)  ^{2}\\
+& =\frac{1}{2}\sum_{i,j}\left(  X_{i}^{2}+X_{j}^{2}-2X_{i}X_{j}\right)  \\
+& =\frac{1}{2}\sum_{i,j}\left(  X_{i}^{2}+X_{j}^{2}\right)  -\sum_{i,j}X_{i}X_{j}\\
+& =n\sum_{i}X_{i}^{2}-\left(  \sum_{i}X_{i}\right)  ^{2}\end{align*}\begin{align*}
+\bar{S}^{2}  & =\frac{1}{\left(  n-1\right)  }\left[  \sum_{i}X_{i}^{2}-n\left(  \bar{X}_{n}\right)  ^{2}\right]  \\
+& =\frac{1}{\left(  n-1\right)  }\sum_{i}\left(  X_{i}-\bar{X}_{n}\right)
+^{2}\end{align*}
+因此$\bar{S}^{2}$是无偏估计量.
 </div>
 
 <div class="exercise">
@@ -273,9 +315,56 @@ c\right)  .$
 
 </div>
 
+<div class="solution">
+由于$X$的值域为$\left[  0,1\right]  ,$
+恒成立\[
+\left(  X-\frac{1}{2}\right)  ^{2}\leqslant\left(  \frac{1}{2}\right)  ^{2}\]
+根据期望的极小性：\begin{align*}
+Var\left(  X\right)    & =E\left[  \left(  X-E\left(  X\right)  \right)
+^{2}\right]  \leqslant E\left[  \left(  X-\frac{1}{2}\right)  ^{2}\right]  \\
+& \leqslant E\left[  \left(  \frac{1}{2}\right)  ^{2}\right]  =\frac{1}{4}\end{align*}
+这个不等式中有两个不等号,
+为了第一个等号成立,
+只需要$X=E\left(  X\right)  $, $a.e.$
+为了第二个等号成立,
+即要\[
+E\left[  \left(  \frac{1}{2}\right)  ^{2}-\left(  X-\frac{1}{2}\right)
+^{2}\right]  =0
+\]
+其被积分非负,
+因而必需有\[
+\frac{1}{2}=\left\vert X-\frac{1}{2}\right\vert ,\text{ }a.e.
+\]
+容易看出, 当\[
+P\left(  X=0\right)  =P\left(  X=1\right)  =\frac{1}{2}\]
+时,
+上述两个条件同时满足,
+最终就有$Var\left(  X\right)  =1/4.$
+当然使得$Var\left(  X\right)  =1/4$的随机变量并不是唯一的.
+</div>
+
 <div class="exercise">
 假设$X\sim Beta\left(  \alpha,\beta\right)  $,
 试求出$X$的期望和方差.
+
+</div>
+
+<div class="solution">
+对$k=1,2$\begin{align*}
+E\left(  X^{k}\right)    & =\frac{\Gamma\left(  \alpha+\beta\right)  }{\Gamma\left(  \alpha\right)  \Gamma\left(  \beta\right)  }\int_{0}^{1}x^{k}x^{\alpha}\left(  1-x\right)  ^{\beta-1}dx\\
+& =\frac{\Gamma\left(  \alpha+\beta\right)  }{\Gamma\left(  \alpha\right)
+\Gamma\left(  \beta\right)  }\cdot\frac{\Gamma\left(  \alpha+k\right)
+\Gamma\left(  \beta\right)  }{\Gamma\left(  \alpha+\beta+k\right)  }\end{align*}
+从而\[
+E\left(  X\right)  =\frac{\alpha}{\alpha+\beta},E\left(  X^{2}\right)
+=\frac{\left(  \alpha\right)  \left(  \alpha+1\right)  }{\left(  \alpha
++\beta\right)  \left(  \alpha+\beta+1\right)  }\]
+因此\begin{align*}
+Var\left(  X\right)    & =E\left(  X^{2}\right)  -\left(  E\left(  X\right)
+\right)  ^{2}\\
+& =\frac{\alpha}{\alpha+\beta}\left[  \frac{\alpha+1}{\alpha+\beta+1}-\frac{\alpha}{\alpha+\beta}\right]  \\
+& =\frac{\alpha\beta}{\left(  \alpha+\beta\right)  ^{2}\left(  \alpha
++\beta+1\right)  }\end{align*}
 
 </div>
 
@@ -287,7 +376,29 @@ $\alpha_{2}>0,$ $\beta>0$.
 
 </div>
 
-
+<div class="solution">
+由于$X_{1},X_{2}$相互独立,
+根据密度卷积公式, $X_{1}+X_{2}$的密度函数为\begin{align*}
+f\left(  z\right)    & =\int_{0}^{\infty}f_{X_{1}}\left(  z-x\right)
+f_{X_{2}}\left(  x\right)  dx\\
+& =\frac{\beta^{\alpha_{1}+\alpha_{2}}}{\Gamma\left(  \alpha_{1}\right)
+\Gamma\left(  \alpha_{2}\right)  }\int_{0}^{z}\left[  \left(  z-x\right)
+^{\alpha_{1}-1}e^{-\beta\left(  z-x\right)  }\right]  \left[  x^{\alpha_{2}-1}e^{-\beta x}\right]  dx\\
+& =\frac{\beta^{\alpha_{1}+\alpha_{2}}}{\Gamma\left(  \alpha_{1}\right)
+\Gamma\left(  \alpha_{2}\right)  }\cdot e^{-\beta z}\cdot\int_{0}^{z}\left(
+z-x\right)  ^{\alpha_{1}-1}x^{\alpha_{2}-1}dx\\
+& =\frac{\beta^{\alpha_{1}+\alpha_{2}}}{\Gamma\left(  \alpha_{1}\right)
+\Gamma\left(  \alpha_{2}\right)  }\cdot z^{\alpha_{1}+\alpha_{2}-1}e^{-\beta
+z}\cdot\int_{0}^{1}\left(  1-y\right)  ^{\alpha_{1}-1}y^{\alpha_{2}-1}dy\text{
+\ }\left(  yz=x\right)  \\
+& =\frac{\beta^{\alpha_{1}+\alpha_{2}}}{\Gamma\left(  \alpha_{1}\right)
+\Gamma\left(  \alpha_{2}\right)  }\cdot z^{\alpha_{1}+\alpha_{2}-1}e^{-\beta
+z}\cdot\frac{\Gamma\left(  \alpha_{1}\right)  \Gamma\left(  \alpha_{2}\right)
+}{\Gamma\left(  \alpha_{1}+\alpha_{2}\right)  }\\
+& =\frac{\beta^{\alpha_{1}+\alpha_{2}}}{\Gamma\left(  \alpha_{1}+\alpha
+_{2}\right)  }\cdot z^{\alpha_{1}+\alpha_{2}-1}e^{-\beta z}\end{align*}
+因此$X_{1}+X_{2}\sim Gamma\left(  \alpha_{1}+\alpha_{2},\beta\right)  $.
+</div>
 
 
 <h3 style="text-align:center">参考材料</h3>
