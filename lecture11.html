@@ -262,12 +262,162 @@ var _hmt = _hmt || [];
       <div class="row">
         <div class="col-md-12">
           
-          
-          
-  <div class="section" id="id1">
-<h1>联系方法<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>如有问题请联系: ruanyl AT buaa DOT edu DOT cn.</p>
+<div class="container">
+    <div class="row">
+        
+        
+        <div class="large-6 columns">
+            <div class="slide download">
+                <a href=" /Lectures/lecture12_estimation.pdf">本课课件 1</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+          
+
+<h3 style="text-align:center">参考习题</h3>
+<div class="exercise">
+假设随机变量$X_{1},...,X_{n}$为随机样本, 总体$X\sim N\left(
+\mu,\sigma^{2}\right)  .$ 令\[
+S^{2}=\frac{1}{n-1}\sum_{i=1}^{n}\left(  X_{i}-\bar{X}_{n}\right)  ^{2},
+\]
+试求出 $Var\left(  S^{2}\right)  $.
+</div>
+
+<div class="solution">
+由于\[
+\frac{1}{\sigma^{2}}\sum_{i=1}^{n}\left(  X_{i}-\bar{X}_{n}\right)  ^{2}\sim\chi^{2}\left(  n-1\right)  =Gamma\left(  \frac{n-1}{2},\frac{1}{2}\right)
+\]
+因此\begin{align*}
+Var\left(  S^{2}\right)    & =Var\left(  \frac{\sigma^{2}}{n-1}\cdot\frac
+{1}{\sigma^{2}}\sum_{i=1}^{n}\left(  X_{i}-\bar{X}_{n}\right)  ^{2}\right)
+\\
+& =\left(  \frac{\sigma^{2}}{n-1}\right)  ^{2}\cdot2\left(  n-1\right)
+=\frac{2\sigma^{4}}{n-1}\end{align*}
+
+</div>
+
+<div class="exercise">
+假设随机变量$X_{1},...,X_{n}$为随机样本, 总体$X\sim N\left(
+\mu,\sigma^{2}\right)  $.
+
+(1)确定只与$n$有关的常数$c_{1}$使得$c_{1}\sqrt{\sum_{i=1}^{n}\left(  X_{i}-\mu\right)  ^{2}}$为$\sigma$的无偏估计量;
+
+(2)确定只与$n$有关的常数$c_{2}$使得$c_{2}\sqrt{\sum_{i=1}^{n}\left(  X_{i}-\bar{X}_{n}\right)  ^{2}}$为$\sigma
+$的无偏估计量.
+</div>
+
+<div class="solution">
+(1) $\frac{1}{\sigma^{2}}\sum_{i=1}^{n}\left(  X_{i}-\mu\right)  ^{2}\sim
+\chi^{2}\left(  n\right)  ,$ 因此\begin{align*}
+E\left(  \sqrt{\frac{1}{\sigma^{2}}\sum_{i=1}^{n}\left(  X_{i}-\mu\right)
+^{2}}\right)    & =\frac{1}{2^{\frac{n}{2}}\Gamma\left(  \frac{n}{2}\right)
+}\int_{0}^{\infty}x^{\frac{1}{2}}\cdot x^{\frac{n}{2}-1}e^{-\frac{1}{2}x}dx\\
+& =\frac{1}{2^{\frac{n}{2}}\Gamma\left(  \frac{n}{2}\right)  }\cdot
+2^{\frac{n+1}{2}}\Gamma\left(  \frac{n+1}{2}\right)  \\
+& =\frac{2^{\frac{1}{2}}\Gamma\left(  \frac{n+1}{2}\right)  }{\Gamma\left(
+\frac{n}{2}\right)  }\end{align*}
+由此\[
+c_{1}=\frac{\Gamma\left(  \frac{n}{2}\right)  }{2^{\frac{1}{2}}\Gamma\left(
+\frac{n+1}{2}\right)  }\]
+
+
+(2) $\frac{1}{\sigma^{2}}\sum_{i=1}^{n}\left(  X_{i}-\bar{X}_{n}\right)
+^{2}\sim\chi^{2}\left(  n-1\right)  ,$
+类似于(1)的计算可得到\[
+c_{2}=\frac{\Gamma\left(  \frac{n-1}{2}\right)  }{2^{\frac{1}{2}}\Gamma\left(
+\frac{n}{2}\right)  }\]
+
+</div>
+
+<div class="exercise">
+假设随机变量$X_{1},...,X_{n}$为随机样本, 总体$X$服从参数$n$和$p$的二项分布. 试求出$\left(
+n,p\right)  $的矩估计量.
+</div>
+
+<div class="solution">
+建立方程组\[
+\frac{1}{n}{\displaystyle\sum_{i=1}^{n}}
+X_{i}=np
+\]\[
+\frac{1}{n}{\displaystyle\sum_{i=1}^{n}}
+X_{i}^{2}=np\left(  1-p\right)  +n^{2}p^{2}\]
+解之得到$\left(  n,p\right)  $的矩估计量为\[
+\tilde{n}=\frac{\bar{X}_{n}^{2}}{\bar{X}_{n}-\left(  1/n\right)  \sum
+_{i=1}^{n}\left(  X_{i}-\bar{X}_{n}\right)  ^{2}},\text{ }\tilde{p}=\frac
+{\bar{X}_{n}}{\tilde{n}}\]
+
+</div>
+
+<div class="exercise">
+假设随机变量$X_{1},...,X_{n}$为随机样本,
+总体分布为$\left[  0,\theta\right]
+$上的均匀分布, $\theta>0.$
+其密度函数为\[
+f\left(  x\right)  =\left\{
+\begin{array}
+[c]{cc}\frac{1}{\theta}, & 0< x< \theta;\\
+0, & \text{其他.}\end{array}
+\right.  .
+\]
+那么不存在关于$\theta$的最大似然估计.
+判断该结论是否正确,
+并说明理由.
+</div>
+
+<div class="solution">
+记$x=\left(  x_{1},...,x_{n}\right)  ^{T}.$
+似然函数为\[
+L\left(  \theta|x\right)  =\left\{
+\begin{array}
+[c]{cc}\frac{1}{\theta^{n}}, & 0< x_{i}< \theta,i=1,...,n;\\
+0, & \text{其他.}\end{array}
+\right.
+\]
+从中可看到$\theta>\max\left\{  x_{1},...,x_{n}\right\}  .$ $L\left(  \theta|x\right)  $随着$\theta
+$减少而增加, 但$\theta$可以无限接近$\max\left\{  x_{1},...,x_{n}\right\}  $却不能达到,
+因此$\theta$没有最大似然估计.
+</div>
+
+<div class="exercise">
+假设随机变量$X_{1},...,X_{n}$为随机样本,
+总体分布为$\left[  \theta,\theta+1\right]
+$上的均匀分布, $\theta\in\mathbb{R}.$
+其密度函数为\[
+f\left(  x\right)  =\left\{
+\begin{array}
+[c]{cc}1, & \theta\leqslant x\leqslant\theta+1;\\
+0, & \text{其他.}\end{array}
+\right.  .
+\]
+是说明关于$\theta$的最大似然估计不是唯一的.
+
+</div>
+
+<div class="solution">
+记$x=\left(  x_{1},...,x_{n}\right)  ^{T}.$
+似然函数为\[
+L\left(  \theta|x\right)  =\left\{
+\begin{array}
+[c]{cc}1, & \theta\leqslant x_{i}\leqslant\theta+1,i=1,...,n;\\
+0, & \text{其他.}\end{array}
+\right.
+\]
+从中可看到$\theta\in\left[  \max\left\{
+x_{1},...,x_{n}\right\}  -1,\min\left\{  x_{1},...,x_{n}\right\}  \right]  .$
+而$L\left(  \theta|x\right)  $的最大值是$1$, 只要$\theta\in\left[
+\max\left\{  x_{1},...,x_{n}\right\}  -1,\min\left\{  x_{1},...,x_{n}\right\}
+\right]  $. 因此$\theta$的最大似然估计不是唯一的.
+</div>
+
+
+
+
+<h3 style="text-align:center">参考材料</h3>
+<figure>
+  <img src="" alt="" width="100%">
+</figure>
 
 
         </div>

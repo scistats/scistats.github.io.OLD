@@ -1,0 +1,585 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    
+    <title>Probability and Statistics</title>
+    
+    <link rel="stylesheet" href="/static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap3-glyphicons-trimmed.css" type="text/css" />
+    <link rel="stylesheet" href="/static/docs.min.css" type="text/css" />
+    <link rel="stylesheet" href="/static/user.css" type="text/css" />
+    <link rel="stylesheet" href="/static/theorem.css" type="text/css" />
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css" type="text/css" />
+    
+    <script type="text/javascript" src="/static/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/revealMenu.js"></script>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  "HTML-CSS": {preferredFont: "STIX",matchFontHeight: true},
+  jax: ["input/TeX","output/SVG"],
+  showMathMenu: false
+});
+</script>
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?77a2e5bee8163fd2915e38f305d9ab44";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+
+  </head>
+  <body role="document">
+
+
+
+
+
+<nav class="navbar navbar-light bg-faded fixed">
+  
+  <a class="navbar-brand" href="index.html">
+  </a>
+  
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html">课程内容</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="assignments.html">课后作业</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="reference.html">参考图书</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="about.html">联系方法</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="main-container"> 
+  
+<ul class="navigation" style="margin-left:0">
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture1.html">1. 事件与概率</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture2.html">2. 随机变量及其分布</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture3.html">3. 多元随机变量及其分布</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture4.html">4. 独立性和条件分布</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture5.html">5. 随机变量的积分</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture6.html">6. 随机变量的期望与方差</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture7.html">7. 常用分布及其性质</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture8.html">8. 正态分布及其性质</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture9.html">9. 大数定律与中心极限定理</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture10.html">10. 样本分布的性质</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="lecture11.html">11. 参数估计</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="Lectures/lecture13_hypothesis_testing.pdf">12. 假设检验</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="Lectures/lecture14_intro_stochastic.pdf">13. 随机过程</a>
+</div>
+</li>
+
+    
+<li class="offscreen-item">
+<div style="display:inline-block">
+<i class="fa fa-chevron-right" style="padding-left:0.2em;color:#0176c6;font-size:0.625rem;vertical-align:middle;">
+</i>
+</div>
+<div style="display:inline-block">
+<a href="Lectures/lecture15_markov_chain_1.pdf">14. Markov链(I)</a>
+</div>
+</li>
+
+</ul>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger">
+  <i class="fa fa-bars" aria-hidden="true"></i>
+</label>
+ 
+  <div class="screen-content-wrap">
+    <div class="screen-content">
+      <div class="row">
+        <div class="col-md-12">
+          
+<div class="container">
+    <div class="row">
+        
+        
+        <div class="large-6 columns">
+            <div class="slide download">
+                <a href=" /Lectures/lecture2_rv1.pdf">本课课件 1</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+          
+
+<h3 style="text-align:center">参考习题</h3>
+<div class="exercise">
+一个袋子中个$5$红球,
+$3$个橙球, $2$蓝球.
+任意取出$2$个球.
+试写出样本空间. 用$X$
+表示被选中的球中橙色球的数目,
+确定$P\left(  X=0\right)  $?
+</div>
+
+<div class="solution">
+$X=0$意味着$2$个球都是从$5$
+红球和 $2$蓝球中抽出,
+其抽取方法数为$C_{7}^{2}$.
+因此\[
+P\left(  X=0\right)  =\frac{C_{7}^{2}}{C_{10}^{2}}=\frac{7!}{2!5!}\frac
+{2!8!}{10!}=\frac{7\cdot6}{10\cdot9}=\frac{14}{30}
+\]
+
+</div>
+
+<div class="exercise">
+假设随机变量$X$
+的分布函数为\[
+F\left(  x\right)  =\left\{
+\begin{array}
+[c]{cc}
+0, & x<0\\
+\frac{1}{2}, & 0\leqslant x<1\\
+1, & 1\leqslant x<\infty
+\end{array}
+\right.
+\]
+试写出随机变量的概率函数
+</div>
+
+<div class="solution">
+该函数为分段连续函数,
+利用分布函数的性质,
+在其间断点处\[
+P\left(  X=0\right)  =F\left(  0\right)  -F\left(  0-\right)  =\frac{1}
+{2}-0=\frac{1}{2}
+\]
+\[
+P\left(  X=1\right)  =F\left(  1\right)  -F\left(  1-\right)  =1-\frac{1}
+{2}=\frac{1}{2}
+\]
+由此可得所求的概率函数.
+</div>
+
+<div class="exercise">
+投掷一个硬币直到出现$r$
+个正面,
+假设在一次投掷中硬币正面出现概率为$p$
+. 令$X$
+表示每次实验的投掷总次数.
+证明$X$具有密度函数
+\[
+P\left(  X=n\right)  =C_{n-1}^{r-1}p^{r}\left(  1-p\right)  ^{n-r},n\geqslant
+r.
+\]
+</div>
+
+<div class="solution">
+$X=n$表明在这$n$
+次投掷中最后一次是正面,
+而前面的$n-1$
+次中必须有$r-1$个正面.
+最后一次投掷是正面,
+概率为$p.$ 前$n-1$次中有$r-1$
+个正面则服从参数是$n-1$
+和$p$的二项分布$.$
+由独立性,
+\[
+P\left(  X=n\right)  =C_{n-1}^{r-1}p^{r-1}\left(  1-p\right)  ^{n-r}\cdot
+p,n\geqslant r.
+\]
+
+</div>
+
+<div class="exercise">
+独立地投掷一个均匀硬币$n$
+次$,$ 其中由甲投掷$k$次,
+由乙投掷$n-k$次$.$
+证明甲和乙得到相同正面数目的概率等于两人得到的正面总数目正好为$k$
+的概率.
+</div>
+
+<div class="solution">
+令$X,Y$
+分别为甲和乙投得正面的次数.
+由题意, $X$服从参数为$k$
+和$\frac{1}{2}$的二项分布, $Y$
+服从参数为$n-k$和$\frac{1}{2}
+$的二项分布.
+由全概率公式以及独立性\begin{align*}
+P\left(  X=Y\right)   &  =\sum_{s}P\left(  Y=s|X=s\right)  P\left(  X=s\right)
+\\
+&  =\sum_{s}P\left(  Y=s\right)  P\left(  X=s\right) \\
+&  =\sum_{s}C_{n-k}^{s}\left(  \frac{1}{2}\right)  ^{n-k}\cdot C_{k}
+^{s}\left(  \frac{1}{2}\right)  ^{k}\\
+&  =\sum_{s}C_{n-k}^{s}\cdot C_{k}^{k-s}\left(  \frac{1}{2}\right)  ^{n}\\
+&  =C_{n}^{k}\left(  \frac{1}{2}\right)  ^{n}
+\end{align*}
+最后一个等号是由于从$n$
+个对象中取出$k$
+个的方法总数等于,
+先从前$n-k$个中取出$s$个,
+再从余下的$k$
+个中取出$k-s$个,
+然后对所有可能的$s$
+值求和所得到的总数.
+$C_{n}^{k}\left(  \frac{1}{2}\right)  ^{n}$
+正是甲和乙一共抽出$k$个正面的概率.
+
+本题也可以用如下方法证明.
+首先注意$X$服从参数为$k$
+和$\frac{1}{2}$的二项分布,
+因此$P\left(  X=s\right)  =P\left(  X=k-s\right)  $, $\forall s.$
+由全概率公式以及独立性\begin{align*}
+P\left(  X=Y\right)   &  =\sum_{s}P\left(  Y=s|X=s\right)  P\left(  X=s\right)
+\\
+&  =\sum_{s}P\left(  Y=s\right)  P\left(  X=s\right) \\
+&  =\sum_{s}P\left(  Y=s\right)  P\left(  X=k-s\right) \\
+&  =\sum_{s}P\left(  Y=s\right)  P\left(  X=k-s|Y=s\right) \\
+&  =P\left(  X+Y=k\right)
+\end{align*}
+
+</div>
+
+<div class="exercise">
+随机变量$X$
+的分布函数是$F\left(  x\right)  $.
+确定$Y=aX+b$
+的分布函数.
+</div>
+
+<div class="solution">
+根据定义, $Y$的分布函数\begin{align*}
+F_{Y}\left(  y\right)   &  =P\left(  Y\leqslant y\right)  \\
+&  =P\left(  aX+b\leqslant y\right)  \\
+&  =P\left(  aX\leqslant y-b\right)
+\end{align*}
+因此$a>0$时$F_{Y}\left(  y\right)  =F\left(  \frac{y-b}%
+{a}\right)  $; $a<0$时$F_{Y}\left(  y\right)  =1-\lim_{x\nearrow
+\frac{y-b}{a}}F\left(  x\right)  $; $a=0$时\[
+F_{Y}\left(  y\right)  =\left\{
+\begin{array}
+[c]{cc}%
+0, & y< b\\
+1, & y\geqslant b
+\end{array}
+\right.
+\]
+
+</div>
+
+<div class="exercise">
+随机变量$X$和$Y$
+的分布函数分别是$F\left(
+x\right)  ,$ $G\left(  x\right)  $. $\lambda\in\left(  0,1\right)  .$
+下列哪些是分布函数, 试说明理由.
+
+(1) $\lambda F\left(  x\right)  +\left(  1-\lambda\right)  G\left(  x\right)
+;$
+
+(2) $F\left(  x\right)  ^{\lambda}G\left(  x\right)  ^{1-\lambda};$
+
+(3) $F\left(  x\right)  ^{\lambda}$.
+
+</div>
+
+<div class="solution">
+容易验证上面的非负函数满足（1）右连续（2）在$-\infty
+,\infty$的极限分别为$0,1.$
+（3）单调不减少$.$ 因此都是分布函数.
+</div>
+
+<div class="exercise">
+已知随机变量$X$
+的分布函数是\[
+P\left(  X\leqslant x\right)  =\left\{
+\begin{array}
+[c]{cc}
+0, & x\leqslant0\\
+x, & 0< x\leqslant1\\
+1, & 1< x
+\end{array}
+\right.  .
+\]
+假设$F\left(  x\right)  $
+是连续的严格递增分布函数.
+试说明$Y=F^{-1}\left(  X\right)  $
+是一个以$F\left(  x\right)  $
+为分布函数的随机变量.
+</div>
+
+<div class="solution">
+由于$F$严格单调,
+因此存在反函数$F^{-1}.$
+根据定义, $Y$的分布函数\begin{align*}
+F_{Y}\left(  y\right)   &  =P\left(  Y\leqslant y\right) \\
+&  =P\left(  F^{-1}\left(  X\right)  \leqslant y\right) \\
+&  =P\left(  X\leqslant F\left(  y\right)  \right) \\
+&  =F\left(  y\right)
+\end{align*}
+容易看出,
+题设中给出的分布函数$P\left(
+X\leqslant x\right)  $是$\left[  0,1\right]  $
+上的一致分布,
+该题说明,
+给定适当的分布函数,
+总是存在随机变量$Y$,
+它的分布函数$F_{Y}$
+正好是预先给定的分布函数$F.$
+(如果$F$不连续, 那么$F$
+只有广义的反函数, 参见课件)
+</div>
+
+<div class="exercise">
+随机变量$X$
+的分位函数被定义为\[
+F^{-1}\left(  p\right)  =\inf\left\{  x:F\left(  x\right)  \geqslant
+p\right\}  ,\forall p\in\left(  0,1\right)  .
+\]
+其中$F\left(  x\right)  $是$X$
+的分布函数. 试证明$F^{-1}
+\left(  p\right)  $是关于$p$
+的左连续函数.
+</div>
+
+<div class="solution">
+(1) 首先说明$F^{-1}$
+是单调不减少的. 在$F^{-1}
+$的定义域中任取$p_{1}\leqslant
+p_{2}.$ 令$C_{p}=\left\{  x:F\left(  x\right)  \geqslant p\right\}  .$
+由于$F\left(  x\right)  $
+是单调不减少的,
+集合$C_{p}$随着的$p$
+增加而减小, 因此\[
+F^{-1}\left(  p_{1}\right)  =\inf_{x}C_{p_{1}}\leqslant\inf_{x}C_{p_{2}
+}=F^{-1}\left(  p_{2}\right)
+\]
+
+
+（2）证明$F^{-1}\left(  p-\right)  =F^{-1}\left(
+p\right)  .$ 由于$F^{-1}$单调不减少,
+\[
+F^{-1}\left(  p-\right)  =\lim_{q\nearrow p}F^{-1}\left(  q\right)
+=\sup\left\{  F^{-1}\left(  q\right)  :q< p\right\}  .
+\]
+同时也有, 对任意$q< p$
+\begin{equation}
+F^{-1}\left(  q\right)  \leqslant F^{-1}\left(  p\right)
+\end{equation}
+由此\[
+F^{-1}\left(  q\right)  \leqslant F^{-1}\left(  p-\right)  \leqslant
+F^{-1}\left(  p\right)
+\]
+接下来说明$F^{-1}\left(  p-\right)
+< F^{-1}\left(  p\right)  $是不可能的.
+若不然, 假设$F^{-1}\left(  p-\right)
+< F^{-1}\left(  p\right)  $成立,
+那么根据$F^{-1}$的定义\[
+F\left(  F^{-1}\left(  p-\right)  \right)  < p
+\]
+于是
+\[
+F\left(  F^{-1}\left(  q\right)  \right)  \leqslant F\left(  F^{-1}\left(
+p-\right)  \right)  < p
+\]
+但我们有$q\leqslant F\left(  F^{-1}\left(  q\right)
+\right)  ,$ 因此$q\leqslant F\left(  F^{-1}\left(  p-\right)
+\right)  < p$, 这与$q$的任意性矛盾.
+</div>
+
+
+<h3 style="text-align:center">参考材料</h3>
+<figure>
+  <img src="" alt="" width="100%">
+</figure>
+
+
+        </div>
+
+          
+      </div>
+    </div>
+
+    
+<footer class="bd-footer text-muted" role="contentinfo">
+  <div class="container">
+    <ul class="bd-footer-links">
+      <li><a href="http://www.buaa.edu.cn/">北京航空航天大学</a></li>
+    </ul>
+    <p>概率论与数理统计 2016-2018</p>
+    <p>v0.0.0-alpha.1.</p>
+  </div>
+</footer>
+
+
+
+
+  </div>
+</div>
+  </body>
+</html>
